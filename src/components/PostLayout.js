@@ -1,18 +1,13 @@
 import React from "react";
+import Post from "./Post";
 
-function PostLayout({ posts }) {
-  return <div></div>;
+function PostLayout({ posts, selectedTag }) {
+  const renderPost = () =>
+    posts.map((post, index) => {
+      return <Post selectedTag={selectedTag} key={index} post={post} />;
+    });
+
+  return <div className="row">{renderPost()}</div>;
 }
 
 export default PostLayout;
-
-{
-  /* <div className="card" style={{ width: "18rem" }}>
-      <div className="card-header">Featured</div>
-      <ul className="list-group list-group-flush">
-        <li className="list-group-item">{posts.title}</li>
-        <li className="list-group-item">{posts.body}</li>
-        <li className="list-group-item">{posts.tags}</li>
-      </ul>
-    </div> */
-}
