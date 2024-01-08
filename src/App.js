@@ -24,7 +24,7 @@ function App() {
       return post.tags.includes(selectedTag);
     });
     setFilteredPost(filtered);
-    console.log(filtered);
+
   }, [selectedTag]);
 
   return (
